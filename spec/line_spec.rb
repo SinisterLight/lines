@@ -6,4 +6,9 @@ describe 'Line' do
     expect(line.start_point).to eq([1,1])
     expect(line.end_point).to eq([2,2])
   end
+
+  it "should return length of line" do
+    line = Line.new [0,0], [3,4]
+    expect(line.length).to eq(5)
+  end
 end
