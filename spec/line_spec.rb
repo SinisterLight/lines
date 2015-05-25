@@ -11,4 +11,30 @@ describe 'Line' do
     line = Line.new [0,0], [3,4]
     expect(line.length).to eq(5)
   end
+
+  describe "equlity" do
+    it "should be equal" do
+      line1 = Line.new [0,0], [3,4]
+      line2 = Line.new [0,0], [3,4]
+      expect(line1 == line2).to eq(true)
+    end
+
+    it "should not be equal" do
+      line1 = Line.new [0,0], [3,4]
+      line2 = Line.new [1,1], [2,2]
+      expect(line1 == line2).not_to eq(true)
+    end
+
+    it "should be reflexive" do
+      line1 = Line.new [0,0], [3,4]
+      expect(line1 == line1).to eq(true)
+    end
+
+    it "should be symetric" do
+      line1 = Line.new [0,0], [3,4]
+      line2 = Line.new [3,4], [0,0]
+      expect(line1 == line2).to eq(true)
+      expect(line2 == line1).to eq(true)
+    end
+  end
 end

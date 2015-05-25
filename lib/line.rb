@@ -12,4 +12,14 @@ class Line
       (@start_point[1] - @end_point[1])**2
     )
   end
+
+  def == line
+    (
+      @start_point == line.start_point and
+        @end_point == line.end_point
+    ) or (
+        @end_point == line.start_point and
+      @start_point == line.end_point
+    )
+  end
 end
